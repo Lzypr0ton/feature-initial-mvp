@@ -1,0 +1,5 @@
+import dns from 'node:dns/promises';
+import net from 'node:net';
+const privateV4=(ip:string)=>/^127\.|^10\.|^0\.|^169\.254\.|^192\.168\.|^172\.(1[6-9]|2\d|3[01])\./.test(ip);
+const privateV6=(ip:string)=>ip==='::1'||ip.startsWith('fe80:')||ip.startsWith('fc')||ip.startsWith('fd');
+export async function validateTarget(input:string){ let url:URL; try{url=new URL(input)}catch{throw new Error('Enter a valid absolute URL.')} if(!['http:','https:'].includes(url.protocol))throw new Error('Only HTTP and HTTPS URLs are supported.'); if(url.username||url.password)throw new Error('URLs with credentials are not supported.'); const host=url.hostname.toLowerCase(); if(host==='localhost'||host.endsWith('.localhost'))throw new Error('Localhost targets are blocked.'); const ips=net.isIP(host)?[{address:host}]:await dns.lookup(host,{all:true,verbatim:true}); if(ips.some(x=>privateV4(x.address)||privateV6(x.address)))throw new Error('Private, loopback and link-local network targets are blocked.'); return url.toString(); }

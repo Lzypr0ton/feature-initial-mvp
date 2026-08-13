@@ -1,0 +1,1 @@
+{"name":"@gigw/scanner","version":"0.1.0","private":true,"type":"module","main":"src/index.ts","dependencies":{"@gigw/shared":"*","@gigw/rules":"*","axe-core":"^4.10.0","playwright":"^1.52.0"}}

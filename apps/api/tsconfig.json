@@ -1,0 +1,1 @@
+{"extends":"../../tsconfig.base.json","compilerOptions":{"composite":true,"outDir":"dist","rootDir":"src"},"references":[{"path":"../../packages/shared"},{"path":"../../packages/scanner"},{"path":"../../packages/reports"}],"include":["src"]}

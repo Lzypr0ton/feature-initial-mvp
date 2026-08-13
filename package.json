@@ -1,0 +1,8 @@
+{
+  "name": "gigw-compliance-checker",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": ["apps/*", "packages/*"],
+  "scripts": {"dev":"concurrently \"npm run dev -w @gigw/api\" \"npm run dev -w @gigw/web\"","build":"npm run build --workspaces","typecheck":"tsc -b","lint":"eslint .","test":"vitest run","test:watch":"vitest","format":"prettier --write .","playwright:install":"playwright install chromium"},
+  "devDependencies": {"@eslint/js":"^9.0.0","@playwright/test":"^1.52.0","@types/node":"^22.0.0","@typescript-eslint/eslint-plugin":"^8.0.0","@typescript-eslint/parser":"^8.0.0","concurrently":"^9.0.0","eslint":"^9.0.0","prettier":"^3.0.0","tsx":"^4.0.0","typescript":"^5.7.0","typescript-eslint":"^8.0.0","vitest":"^3.0.0"}
+}
