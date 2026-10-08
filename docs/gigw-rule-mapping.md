@@ -4,7 +4,7 @@ Authoritative source: the NIC/MeitY [GIGW 3.0 manual](https://guidelines.india.g
 
 | Rule ID | GIGW reference | Requirement | Automated? | Method |
 |---|---|---|---|---|
-| GIGW-A11Y-LANG | Accessibility: Guidelines and Attributes | Programmatic language declaration | Yes | Inspect `html[lang]` in rendered DOM |
+| GIGW-A11Y-LANG | Accessibility: Guidelines and Attributes | Programmatic language declaration | Yes | Inspect `html[lang]` in rendered DOM and validate it as a BCP 47 language tag |
 | GIGW-A11Y-IMG-ALT | Accessibility guidance; GIGW references WCAG 2.1 | Text alternatives for non-text content | Partial | Detect missing `alt`/accessible name only; meaning is manual |
 | GIGW-QUALITY-TITLE | Quality: Guidelines and Attributes | Identifiable pages | Yes | Inspect non-empty `title` |
 | GIGW-MANUAL-ALT-MEANING | Accessibility guidance | Alternative text appropriate to context | No | Human contextual review |
